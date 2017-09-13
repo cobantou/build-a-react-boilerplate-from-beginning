@@ -1,0 +1,35 @@
+{
+  "name": "build-a-react-boilerplate-from-beginning",
+  "version": "1.0.0",
+  "description": "build-a-react-boilerplate-from-beginning",
+  "main": "index.js",
+  "dependencies": {
+    "antd": "^2.13.1",
+    "axios": "^0.16.2",
+    "classnames": "^2.2.5",
+    "dva": "^2.0.1",
+    "jsonp": "^0.2.1",
+    "lodash": "^4.17.4",
+    "moment": "^2.18.1",
+    "path-to-regexp": "^2.0.0",
+    "react": "^15.6.1"
+  },
+  "devDependencies": {
+    "webpack": "^3.5.6",
+    "webpack-dev-server": "^2.7.1"
+  },
+  "scripts": {
+    "start": "webpack-dev-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cobantou/build-a-react-boilerplate-from-beginning.git"
+  },
+  "author": "cobantou",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cobantou/build-a-react-boilerplate-from-beginning/issues"
+  },
+  "homepage": "https://github.com/cobantou/build-a-react-boilerplate-from-beginning#readme"
+}

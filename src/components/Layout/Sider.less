@@ -1,0 +1,49 @@
+
+.normal {
+  width: 180px;
+  overflow: auto;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+}
+
+.menuName {
+  height: 70px;
+  line-height: 70px;
+  text-align: center;
+  background-color: #545454;
+  color: #e5e5e5;
+  font-size: 15px;
+}
+
+.menuNumber {
+  color: #e8792e;
+  float: right;
+  font-size: 12px;
+}
+.menuText{
+  float: left;
+}
+
+.menuIcon{
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  float: left;
+  margin-top: 8px;
+  margin-right: 10px;
+  margin-left: -14px;
+  &.myAccept{
+    background: url("../../assets/images/ico_myAccept.png") no-repeat;
+  }
+  &.myApply{
+    background: url("../../assets/images/ico_myApply.png") no-repeat;
+  }
+  &.workOverview{
+    background: url("../../assets/images/ico_workOverview.png") no-repeat;
+  }
+  &.rmtCoop{
+    background: url("../../assets/images/ico_rmtCoop.png") no-repeat;
+  }
+}
