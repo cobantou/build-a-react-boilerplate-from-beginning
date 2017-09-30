@@ -14,3 +14,5 @@
 * 引入babel-plugin-import 来引入antd 的组件
 * 引入babel-preset-env支持最新es语法
 * extract-text-webpack-plugin将样式从js中抽离成单独的文件
+* postcss-loader处理less，模块化？ //注意路径
+* html-webpack-plugin 生成html
