@@ -2,6 +2,7 @@ import dva from 'dva';
 import {message} from 'antd'
 import createLoading from 'dva-loading'
 // import './index.less';
+import "babel-polyfill";
 
 // 1. Initialize
 const app = dva({
@@ -9,6 +10,7 @@ const app = dva({
     effects: true,
   }),
   onError (error) {
+    debugger
     message.error(error.message)
   },
 });
@@ -19,9 +21,10 @@ const app = dva({
 // 3. Model
 app.model(require('./models/app'));
 
-
 // 4. Router
 app.router(require('./router'));
+
+
 
 // 5. Start
 app.start('#root');

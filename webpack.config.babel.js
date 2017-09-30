@@ -37,7 +37,9 @@ module.exports = {
         //publicPath: "/res/dist/",
         path: path.resolve(__dirname, './dist/'),
         // filename: '[name].[chunkhash:8].js'
-        filename: 'bundle.js'
+        filename: '[name].[chunkhash:8].js',
+        chunkFilename: '[name].async.js',
+        libraryTarget:'var'
     },
     devServer: {
         inline: true,
@@ -104,19 +106,19 @@ module.exports = {
                                 localIdentName: '[local]___[hash:base64:5]'
                             }
                         },
-                        {
-                            loader: 'postcss-loader',
-                            options: {
-                                plugins: function (loader) {
-                                    return [
-                                        // require('postcss-import')({ root: loader.resourcePath }),
-                                        // require('postcss-cssnext')(),
-                                        require('autoprefixer')(),
-                                        //require('cssnano')()
-                                    ]
-                                }
-                            }
-                        },
+                        // {
+                        //     loader: 'postcss-loader',
+                        //     options: {
+                        //         plugins: function (loader) {
+                        //             return [
+                        //                 // require('postcss-import')({ root: loader.resourcePath }),
+                        //                 // require('postcss-cssnext')(),
+                        //                 require('autoprefixer')(),
+                        //                 //require('cssnano')()
+                        //             ]
+                        //         }
+                        //     }
+                        // },
                     ]
                 })
             },
@@ -135,19 +137,19 @@ module.exports = {
                                 localIdentName: '[local]___[hash:base64:5]'
                             }
                         },
-                        {
-                            loader: 'postcss-loader',
-                            options: {
-                                plugins: function (loader) {
-                                    return [
-                                        // require('postcss-import')({ root: loader.resourcePath }),
-                                        // require('postcss-cssnext')(),
-                                        require('autoprefixer')(),
-                                        //require('cssnano')()
-                                    ]
-                                }
-                            }
-                        },
+                        // {
+                        //     loader: 'postcss-loader',
+                        //     options: {
+                        //         plugins: function (loader) {
+                        //             return [
+                        //                 // require('postcss-import')({ root: loader.resourcePath }),
+                        //                 // require('postcss-cssnext')(),
+                        //                 require('autoprefixer')(),
+                        //                 //require('cssnano')()
+                        //             ]
+                        //         }
+                        //     }
+                        // },
                         {
                             loader: 'less-loader',//less->css
                             options: {

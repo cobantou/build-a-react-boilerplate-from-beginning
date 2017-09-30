@@ -113,12 +113,9 @@ export default {
   },
   subscriptions: {
     setup ({dispatch}) {
+      debugger
       // dispatch({type: 'queryMenu'});
-    },
-    // error(){
-    //   debugger
-    //   throw  new Error("1")
-    // }
+    }
 
   },
 };

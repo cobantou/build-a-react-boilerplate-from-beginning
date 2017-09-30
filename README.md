@@ -16,3 +16,5 @@
 * extract-text-webpack-plugin将样式从js中抽离成单独的文件
 * postcss-loader处理less，模块化？ //注意路径
 * html-webpack-plugin 生成html
+* transform-runtime 根本上解决es6语法问题，能解决regeneratorRuntime报错
+* babel-plugin-dva-hmr解决routes等文件热更新
