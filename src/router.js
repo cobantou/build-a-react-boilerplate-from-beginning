@@ -4,6 +4,7 @@ import React from 'react'
  */
 import {Router} from 'dva/router'
 import App from './routes/app'
+
 debugger
 
 const registerModel = (app, model) => {
@@ -17,49 +18,48 @@ const Routers = function ({history, app}) {
         {
             path: '/',
             component: App,
-            indexRoute: {
-                onEnter: (nextState, replace) => {
-                    debugger
-                }
+            indexRoute: {onEnter: (nextState, replace) => replace('/msgTplSetting')},
+            onEnter: (nextState, replace) => {
+                debugger
             },
-            // childRoutes: [
-            //     {
-            //         path: 'msgTplSetting',
-            //         getComponent (nextState, cb) {
-            //             debugger
-            //             require.ensure([], require => {
-            //                 registerModel(app, require('./models/msgTplSetting'));
-            //                 cb(null, require('./routes/MsgTplSetting'))
-            //             }, 'msgTplSetting')
-            //         }
-            //     },
-            //     {
-            //         path: 'msgSetting',
-            //         getComponent (nextState, cb) {
-            //             require.ensure([], require => {
-            //                 registerModel(app, require('./models/msgSetting'));
-            //                 cb(null, require('./routes/MsgSetting'))
-            //             }, 'msgSetting')
-            //         }
-            //     },
-            //     {
-            //         path: 'msgList',
-            //         getComponent (nextState, cb) {
-            //             require.ensure([], require => {
-            //                 registerModel(app, require('./models/msgList'));
-            //                 cb(null, require('./routes/MsgList'))
-            //             }, 'msgList')
-            //         }
-            //     },
-            //     {
-            //         path: '*',
-            //         getComponent (nextState, cb) {
-            //             /*require.ensure([], (require) => {
-            //              cb(null, require('routes/error/'))
-            //              }, 'error')*/
-            //         },
-            //     },
-            // ],
+            childRoutes: [
+                {
+                    path: 'msgTplSetting',
+                    getComponent (nextState, cb) {
+                        debugger
+                        require.ensure([], require => {
+                            registerModel(app, require('./models/msgTplSetting'));
+                            cb(null, require('./routes/MsgTplSetting'))
+                        }, 'msgTplSetting')
+                    }
+                },
+                {
+                    path: 'msgSetting',
+                    getComponent (nextState, cb) {
+                        require.ensure([], require => {
+                            registerModel(app, require('./models/msgSetting'));
+                            cb(null, require('./routes/MsgSetting'))
+                        }, 'msgSetting')
+                    }
+                },
+                {
+                    path: 'msgList',
+                    getComponent (nextState, cb) {
+                        require.ensure([], require => {
+                            registerModel(app, require('./models/msgList'));
+                            cb(null, require('./routes/MsgList'))
+                        }, 'msgList')
+                    }
+                },
+                {
+                    path: '*',
+                    getComponent (nextState, cb) {
+                        /*require.ensure([], (require) => {
+                         cb(null, require('routes/error/'))
+                         }, 'error')*/
+                    },
+                },
+            ],
         },
     ]
 

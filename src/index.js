@@ -25,6 +25,8 @@ app.model(require('./models/app'));
 app.router(require('./router'));
 
 
-
+debugger
 // 5. Start
 app.start('#root');
+
+

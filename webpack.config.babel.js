@@ -39,7 +39,7 @@ module.exports = {
         // filename: '[name].[chunkhash:8].js'
         filename: '[name].[chunkhash:8].js',
         chunkFilename: '[name].async.js',
-        libraryTarget:'var'
+        libraryTarget: 'var'
     },
     devServer: {
         inline: true,
@@ -68,22 +68,31 @@ module.exports = {
             },
             {
                 test: /\.(js|jsx)$/,
-                //  include: path.resolve(__dirname, "src"),
+                // include: path.resolve(__dirname, "src"),
+                exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader',
                     options: {
                         babelrc: false,
                         presets: [
                             //支持es2015-stage0，支持react
-                            require.resolve('babel-preset-es2015'),
-                            require.resolve('babel-preset-react'),
-                            require.resolve('babel-preset-stage-0'),
+                            // require.resolve('babel-preset-es2015'),
+                            // require.resolve('babel-preset-react'),
+                            // require.resolve('babel-preset-stage-0'),
+                            'babel-preset-es2015',
+                            'babel-preset-react',
+                            'babel-preset-stage-0',
                         ],
                         plugins: [
                             //？
-                            require.resolve('babel-plugin-add-module-exports'),
-                            require.resolve('babel-plugin-react-require'),
-                            require.resolve('babel-plugin-syntax-dynamic-import'),
+                            // require.resolve('babel-plugin-add-module-exports'),
+                            // require.resolve('babel-plugin-react-require'),
+                            // require.resolve('babel-plugin-syntax-dynamic-import'),
+                            'babel-plugin-add-module-exports',
+                            'babel-plugin-react-require',
+                            'babel-plugin-syntax-dynamic-import',
+                            "transform-runtime",
+                            "dva-hmr",
                             ["import", {"libraryName": "antd", "libraryDirectory": "lib", "style": true}]
                         ],
                         cacheDirectory: true,
@@ -176,7 +185,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: './index.html',
             hash: false,
-            template: `${__dirname}/src/entry.ejs`,
+            template: `!!ejs-loader!${__dirname}/src/entry.ejs`,
             // minify: production ? {
             //     collapseWhitespace: true,
             // } : null,
